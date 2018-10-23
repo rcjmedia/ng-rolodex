@@ -1,0 +1,39 @@
+.head-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #ddd;
+  box-shadow: 2px 2px 3px 3px black;
+}
+
+.title {
+  display: grid;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #ddd;
+}
+
+.nav {
+  display: grid;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ddd;
+  
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 15px;
+  
+      a {
+        text-decoration: none;
+        color: #222;
+        font-size: 22px;
+        font-weight: bold;
+  
+        &:hover {
+          color: darken(yellow, 1%);
+        }
+      }
+    }
+  }
+}
