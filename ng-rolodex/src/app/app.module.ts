@@ -11,9 +11,9 @@ import { HeaderComponent } from './shared/header/header.component';
 /* Pages */
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-// import { ContactsComponent } from './pages/contacts/contacts.component';
-// import { ProfileComponent } from './pages/profile/profile.component';
-// import { NewComponent } from './pages/new/new.component';
+import { ViewAllContactsComponent } from './pages/viewallcontacts/viewallcontacts.component';
+import { MyProfileComponent } from './pages/myprofile/myprofile.component';
+import { CreateContactComponent } from './pages/createcontact/createcontact.component';
 
 
 @NgModule({
@@ -21,10 +21,10 @@ import { LoginComponent } from './pages/login/login.component';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    LoginComponent
-    // ContactsComponent
-    // ProfileComponent
-    // NewComponent
+    LoginComponent,
+    ViewAllContactsComponent,
+    MyProfileComponent,
+    CreateContactComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +34,9 @@ import { LoginComponent } from './pages/login/login.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'login', component: LoginComponent },
-      // { path: 'contacts', component: ContactsComponent },
-      // { path: 'profile', component: ProfileComponent },
-      // { path: 'new', component: NewComponent },
+      { path: 'viewallcontacts', component: ViewAllContactsComponent },
+      { path: 'myprofile', component: MyProfileComponent },
+      { path: 'createcontact', component: CreateContactComponent },
       { path: '**', redirectTo: '', pathMatch: 'full' }
     ])
 
