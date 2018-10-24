@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, appRoutes } from './app-routing.module';
 /* Components */
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -14,6 +14,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { ViewAllContactsComponent } from './pages/viewallcontacts/viewallcontacts.component';
 import { MyProfileComponent } from './pages/myprofile/myprofile.component';
 import { CreateContactComponent } from './pages/createcontact/createcontact.component';
+import { UserComponent } from './pages/user/user.component';
+import { SignInComponent } from './pages/user/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/user/sign-up/sign-up.component';
+import { SharedComponent } from './pages/user/shared/shared.component';
+import { AuthComponent } from './pages/auth/auth.component';
 
 
 @NgModule({
@@ -24,23 +29,19 @@ import { CreateContactComponent } from './pages/createcontact/createcontact.comp
     LoginComponent,
     ViewAllContactsComponent,
     MyProfileComponent,
-    CreateContactComponent
+    CreateContactComponent,
+    UserComponent,
+    SignInComponent,
+    SignUpComponent,
+    SharedComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'viewallcontacts', component: ViewAllContactsComponent },
-      { path: 'myprofile', component: MyProfileComponent },
-      { path: 'createcontact', component: CreateContactComponent },
-      { path: '**', redirectTo: '', pathMatch: 'full' }
-    ])
-
-
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

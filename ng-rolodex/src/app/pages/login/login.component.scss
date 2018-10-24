@@ -5,13 +5,16 @@ body {
     max-width: 600px;
     margin: auto;
     border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 5px gray;
     &:after {
       content: "";
       display: table;
       clear: both;
     }
     .form-heading {
-      background: #00B16A;
+      background: #fde428;
+      border-radius: 10px;
       padding: 10px 15px;
       h2 {
         color: #fff;

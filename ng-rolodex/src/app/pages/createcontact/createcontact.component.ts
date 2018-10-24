@@ -7,23 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateContactComponent implements OnInit {
 
-//   title: string = 'This is awesome';
-//   subtitle: string;
-//   data: {
-//     header: string
-//   } = {
-//     header: 'THIS IS THE HEADERS'
-//   };
+    title: string = "Create New Contact";
+    formData: {
+        firstname: string,
+        lastname: string,
+        address: string,
+        city: string,
+        state: string,
+        zipcode: number,
+        phone: number,
+        email: string,
+        class: string
+    } 
+    = {
+        firstname: 'John',
+        lastname: 'Doe',
+        address: '1919 Aloha Street',
+        city: 'Honolulu',
+        state: 'Hawaii',
+        zipcode: 96819,
+        phone: 8088008000,
+        email: 'john@doe.com',
+        class: 'contact-form' //pass the css classname here
+    }
 
-//   constructor(private backend: BackendService) {
-//     const subtitle: string = 'This is really awesome';
+    constructor() {}
 
-//     this .subtitle = subtitle;
-
-// }
-
-  ngOnInit() {
-
-  }
-
+    submit() { console.log(this.formData) }
+  ngOnInit() { }
 }

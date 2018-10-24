@@ -1,4 +1,32 @@
 <section id="createcontact" class="content">
-    <h2>Create Contact</h2>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<form class="form-horizontal">
+    <div class="form-heading">
+        <h2>Create New Contact</h2>
+    </div>
+    <div class="form-group">
+        <div class="left">
+            <input type="text" class="form-control" placeholder="Firstname" name="firstname"/>
+            <input type="text" class="form-control" placeholder="Lastname" name="lastname"/>
+            <input type="text" class="form-control" placeholder="Address" name="address"/>
+            <input type="city" class="form-control" placeholder="City" name="city"/>
+            <input type="state" class="form-control" placeholder="State" name="state"/>
+            <input type="number" class="form-control" placeholder="Zipcode" name="zipcode"/>
+            <input type="email" class="form-control" placeholder="Email" name="email"/>
+            <input type="number" class="form-control" placeholder="phone" name="phone"/>
+        </div>
+        <div class="right">
+                <div>New Contact Details</div><br />
+                {{ formData.firstname }} {{ formData.lastname }} <br />
+                {{ formData.address }} <br />
+                {{ formData.city }} <br />
+                {{ formData.state }} <br />
+                {{ formData.zipcode }} <br />
+                {{ formData.email }} <br />
+                {{ formData.phone }} <br />
+        </div>
+    </div>
+    <button (click)="submit()">Submit</button>
+    <button (click)="submit()" [class]="formData.class">Submit To Console Log Button CSS Classname</button>
+</form>
+
 </section>

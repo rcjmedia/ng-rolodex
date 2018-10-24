@@ -2,23 +2,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
-
 export class BackendService {
-  url: string = "http://localhost:4200/api/"
+    baseUrl: string = 'https://swapi.co/api/';
 
-  constructor(private http: HttpClient) { }
+    characters: any[] = [];
 
+    constructor(private http: HttpClient) {  }
 
-  getContacts(user) {
-    const getUrl = this.url + `contacts?user=${user}`;
-    return this.http.get(getUrl).toPromise()
-  }
+    getCharacter(id: number) {
+        const url = this.baseUrl + 'people/' + id;
+        return this.http.get(url).toPromise();
+    }
 
-  submit(data) {
-    console.log('data', data);
-    const postUrl = this.url + 'contacts';
-    return this.http.post(postUrl, data).toPromise()
-  }
+    getPlanets(id: number) {
+        const url = this.baseUrl + 'planets/' + id;
+        return this.http.get(url).toPromise();
+    }
+
+    addCharacters(character) {
+        this.characters.push(character);
+    }
+
 }
