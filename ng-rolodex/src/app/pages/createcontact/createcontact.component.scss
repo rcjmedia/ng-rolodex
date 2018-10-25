@@ -46,9 +46,6 @@ body {
         margin-right: 15px;
         margin-bottom: 15px;
     }
-    .form-control {
-        border-bottom: 1px #002e5b;
-    }
 }
 
 .newcontactdetails {
@@ -65,4 +62,9 @@ p {
     margin-top: -2px;
     // padding-bottom:10px; 
     // margin-bottom:10px;
+}
+
+input[type=text] {
+    // border-bottom: 1px dashed #002e5b;
+    margin-bottom: 1px;
 }
