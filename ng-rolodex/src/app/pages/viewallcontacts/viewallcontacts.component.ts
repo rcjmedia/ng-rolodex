@@ -9,7 +9,7 @@ import { BackendService } from '../../services/backend.service';
 
 export class ViewAllContactsComponent implements OnInit {
 
-  title: string = 'This is awesome';
+  title: string = 'View All Contacts';
   subtitle: string;
   data: {
     header: string

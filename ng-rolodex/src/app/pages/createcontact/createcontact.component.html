@@ -5,24 +5,24 @@
     </div>
     <div class="form-group">
         <div class="left">
-            <input type="text" class="form-control" placeholder="Firstname" name="firstname"/>
-            <input type="text" class="form-control" placeholder="Lastname" name="lastname"/>
-            <input type="text" class="form-control" placeholder="Address" name="address"/>
-            <input type="city" class="form-control" placeholder="City" name="city"/>
-            <input type="state" class="form-control" placeholder="State" name="state"/>
-            <input type="number" class="form-control" placeholder="Zipcode" name="zipcode"/>
-            <input type="email" class="form-control" placeholder="Email" name="email"/>
-            <input type="number" class="form-control" placeholder="phone" name="phone"/>
+            <input type="text" class="form-control" placeholder="Firstname" name="firstname" [(ngModel)]="formData.firstname"/>
+            <input type="text" class="form-control" placeholder="Lastname" name="lastname" [(ngModel)]="formData.lastname"/>
+            <input type="text" class="form-control" placeholder="Address" name="address" [(ngModel)]="formData.address"/>
+            <input type="city" class="form-control" placeholder="City" name="city" [(ngModel)]="formData.city"/>
+            <input type="state" class="form-control" placeholder="State" name="state" [(ngModel)]="formData.state"/>
+            <input type="number" class="form-control" placeholder="Zipcode" name="zipcode" [(ngModel)]="formData.zipcode"/>
+            <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="formData.email"/>
+            <input type="number" class="form-control" placeholder="phone" name="phone" [(ngModel)]="formData.phone"/>
         </div>
         <div class="right">
-                <div>New Contact Details</div><br />
-                {{ formData.firstname }} {{ formData.lastname }} <br />
-                {{ formData.address }} <br />
-                {{ formData.city }} <br />
-                {{ formData.state }} <br />
-                {{ formData.zipcode }} <br />
-                {{ formData.email }} <br />
-                {{ formData.phone }} <br />
+                <div class="newcontactdetails"><p>New Contact Details:</p></div><br />
+                {{ formData.firstname }} {{ formData.lastname }}<br />
+                {{ formData.address }}<br />
+                {{ formData.city }}<br />
+                {{ formData.state }}<br />
+                {{ formData.zipcode }}<br />
+                {{ formData.email }}<br />
+                {{ formData.phone }}<br />
         </div>
     </div>
     <button (click)="submit()">Submit</button>
