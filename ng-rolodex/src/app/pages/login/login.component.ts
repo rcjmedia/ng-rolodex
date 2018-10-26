@@ -1,29 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'login-page',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+    loginFormData = {
+        username: '',
+        password: ''
+    };
 
-  title: string = 'This is awesome';
-  subtitle: string;
-  data: {
-    header: string
-  } = {
-    header: 'THIS IS THE HEADERS'
-  };
+    constructor(private auth: AuthService) {}
 
-//   constructor(private backend: BackendService) {
-//     const subtitle: string = 'This is really awesome';
-
-//     this .subtitle = subtitle;
-
-// }
-
-  ngOnInit() {
-
-  }
-
+    login() {
+        this.auth.login(this.loginFormData)
+        .then(() => {
+            console.log('User logged In');
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }
 }

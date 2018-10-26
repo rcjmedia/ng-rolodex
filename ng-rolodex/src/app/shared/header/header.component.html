@@ -11,9 +11,14 @@
                 <li><a routerLink="/viewallcontacts"><i class="routes-"></i>View All Contacts</a></li>
                 <li><a routerLink="/createcontact"><i class="routes"></i>Create Contact</a></li>
                 <li><a routerLink="/myprofile"><i class="routes"></i>My Profile</a></li>
-                <li><a routerLink="/login"><i class="routes"></i>Log Out</a></li>
+                <li class="routes" *ngIf="isLoggedIn()">
+                        <a (click)="logout()" class="routes">Log Out</a>
+                        Welcome, {{user.username}}
+                </li>
+                <li class="routes" *ngIf=!user.loggedIn>
+                        <a (click)="login()" class="routes">Log In</a>
+                </li>
             </ul>
         </nav>
     </div>
-
 </div>

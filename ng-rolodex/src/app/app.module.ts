@@ -21,6 +21,12 @@ import { SharedComponent } from './pages/user/shared/shared.component';
 import { AuthComponent } from './pages/auth/auth.component';
 
 
+/* Services */
+import { BackendService } from './services/backend.service';
+import { SessionService } from './services/session.service';
+import { AuthService } from './services/auth.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +49,11 @@ import { AuthComponent } from './pages/auth/auth.component';
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    BackendService,
+    SessionService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
