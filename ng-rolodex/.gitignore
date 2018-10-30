@@ -26,8 +26,11 @@
 
 # misc
 .env
+/server/.node_modules
 .env.prod
 .env.example
+/server/db/seeds/users.js
+/server/db/seeds/contacts.js
 /.sass-cache
 /connect.lock
 /coverage
