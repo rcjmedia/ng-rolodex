@@ -5,13 +5,13 @@
     </div>
     <div class="form-group">
         <div class="left">
-            <input type="text" class="form-control" placeholder="Enter Firstname" name="firstname" [(ngModel)]="formData.firstname"/>
-            <input type="text" class="form-control" placeholder="Enter Lastname" name="lastname" [(ngModel)]="formData.lastname"/>
+            <input type="text" class="form-control" placeholder="Enter Firstname" name="firstname" [(ngModel)]="formData.firstname" (keyup)="validateName()"/>
+            <input type="text" class="form-control" placeholder="Enter Lastname" name="lastname" [(ngModel)]="formData.lastname" (keyup)="validateName()"/>
             <input type="text" class="form-control" placeholder="Enter Address" name="address" [(ngModel)]="formData.address"/>
             <input type="text" class="form-control" placeholder="Enter City" name="city" [(ngModel)]="formData.city"/>
             <input type="text" class="form-control" placeholder="Enter State" name="state" [(ngModel)]="formData.state"/>
             <input type="text" class="form-control" placeholder="Enter Zipcode" name="zipcode" [(ngModel)]="formData.zipcode"/>
-            <input type="text" class="form-control" placeholder="Enter Email" name="email" [(ngModel)]="formData.email"/>
+            <input type="text" class="form-control" placeholder="Enter Email" name="email" [(ngModel)]="formData.email" (keyup)="validateEmail()"/>
             <input type="text" class="form-control" placeholder="Enter phone" name="phone" [(ngModel)]="formData.phone"/>
         </div>
         <div class="right">
@@ -25,8 +25,8 @@
                 {{ formData.phone }}<br />
         </div>
     </div>
-    <button (click)="submit()">Submit</button>
-    <button (click)="submit()" [class]="formData.class">Submit To Console Log Button CSS Classname</button>
+    <button (click)="submit()" class="btn-submit" [disabled]="isDisabled()">Submit</button>
+    <!-- <button (click)="submit()" [class]="formData.class">Submit To Console Log Button CSS Classname</button> -->
 </form>
 
 </section>

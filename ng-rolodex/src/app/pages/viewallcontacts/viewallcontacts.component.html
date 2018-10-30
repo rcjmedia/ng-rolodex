@@ -1,8 +1,41 @@
 <section id="viewallcontacts" class="content">
-    <h2>View All Contacts</h2>
-    <div *ngFor="let chars of characters">
-        {{ chars.name }}
-    </div>
+    <div class="form-horizontal">
+        <div class="form-heading">
+            <h2>View All Contacts</h2>
+        </div>
+        <h2 style="text-align: center">{{ people }}</h2>  
+        <div *ngFor='let char of characters' class='people-wrapper'>
+            <div class="char-name">{{ char.name }}</div>
+            <p style="text-align: left">
+                Height: {{ char.height }} meters    
+            </p>
+            <p style="text-align: right; margin-top: -22px">
+                Hair color: {{ char.hair_color }}
+            </p>
+            <p style="text-align: left">
+                Mass: {{ char.mass }} kilograms
+            </p>
+            <p style="text-align: right; margin-top: -22px">
+                Eye color: {{ char.eye_color }}
+            </p>
+        </div><br /><br />
+        <h2>{{ planet }}</h2>
+        <div *ngFor='let plan of planets' class="planets-wrapper">
+            <div class="planet-name">{{ plan.name }}</div>
+                <p style="text-align: left">
+                    Terrain: {{ plan.terrain }}    
+                </p>
+                <p style="text-align: right; margin-top: -22px">
+                    Population: {{ plan.population }}
+                </p>
+                <p style="text-align: left">
+                    Planet: {{ plan.url }}
+                </p>
+                <p style="text-align: right; margin-top: -22px">
+                    Blank: 
+                </p>
+        </div>
+    </div> <!-- form-horizontal -->
 </section>
 
 

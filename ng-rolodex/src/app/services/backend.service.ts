@@ -5,42 +5,46 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class BackendService {
-    baseUrl: string = 'https://swapi.co/api/';
-    // nbaUrl: string = 'http://data.nba.net/10s/prod/v1/20181020/scoreboard.json';
 
-    characters: any[] = [];
+  baseUrl: string = 'https://swapi.co/api/';
 
-    constructor(private http: HttpClient) {  }
+  planets: any[] = [];
+  characters: any[] = [];
+  
+  constructor(private http: HttpClient) {
 
-    getCharacter(id: number) {
-        const url = this.baseUrl + 'people/' + id;
-        return this.http.get(url).toPromise();
-    }
+  }
 
-    getPlanets(id: number) {
-        const url = this.baseUrl + 'planets/' + id;
-        return this.http.get(url).toPromise();
-    }
+  getCharacter(id: number) {
+    const url = this.baseUrl + 'people/' + id;
+    return this.http.get(url).toPromise();
+  }
 
-    addCharacters(character) {
-        this.characters.push(character);
-    }
+  getPlanet(id: number) {
+    const url = this.baseUrl + 'planets/' + id;
+    return this.http.get(url).toPromise();
+  }
 
-    register(data) {
-        return Promise.resolve({});
-    }
+  addCharacters(character) {
+    console.log('character', character)
+    this.characters.push(character);
+  }
 
-    login(data) {
-        return Promise.resolve({ username: data.username });
-    }
+  addPlanets(planet) {
+    console.log('planet', planet)
+    this.planets.push(planet);
+  }
 
-    logout() {
-        return Promise.resolve({});
-    }
+  register(data) {
+    return Promise.resolve({});
+  }
 
-    // getNbaGames() {
-    //     const url = this.nbaUrl;
-    //     return this.http.get(url).toPromise();
-    // }
+  login(data) {
+    return Promise.resolve({ username: data.username });
+  }
+
+  logout() {
+    return Promise.resolve({});
+  }
 
 }

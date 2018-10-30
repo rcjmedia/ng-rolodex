@@ -13,7 +13,7 @@
                 <li><a routerLink="/myprofile"><i class="routes"></i>My Profile</a></li>
                 <li class="routes" *ngIf="isLoggedIn()">
                         <a (click)="logout()" class="routes">Log Out</a>
-                        Welcome, {{user.username}}
+                        Welcome, {{user.username}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </li>
                 <li class="routes" *ngIf=!user.loggedIn>
                         <a (click)="login()" class="routes">Log In</a>

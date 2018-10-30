@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BackendService } from './backend.service';
 import { SessionService } from './session.service';
-import { throwError } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'

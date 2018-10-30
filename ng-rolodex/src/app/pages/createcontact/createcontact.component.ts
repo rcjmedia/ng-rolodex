@@ -33,6 +33,8 @@ title: string = "Create New Contact";
         class: 'contact-form' //pass the css classname here
     }
 
+    validName: boolean = false;
+    validEmail: boolean = false;
     characters: any[]
 
     constructor(private backend: BackendService) {
@@ -43,29 +45,55 @@ title: string = "Create New Contact";
         //   'content'
         }
 
+    submit() {
+        console.log(this.formData)
+    }
+
+    validateName() {
+        // console.log('validateName');
+        if (!this.formData.firstname && !this.formData.lastname) {
+            this.validName = false;
+        }
+        else if (this.formData.firstname.length < 3) {
+            this.validName = false;
+        }
+        else if (this.formData.lastname.length < 3) {
+            this.validName = false;
+        }else {
+            this.validName = true;
+        }
+    }
+
+    validateEmail() {
+        if (!this.formData.email) {
+            this.validEmail = false;
+        }
+        else if (!this.formData.email.includes('@')) {
+            this.validEmail = false;
+        }
+        else if (this.formData.email.length < 3) {
+            this.validEmail = false;
+        }
+        else {
+            this.validEmail = true;
+        }
+    }
+
+    isDisabled() {
+        return !this.validName || !this.validEmail;
+    }    
+
     ngOnInit() {
         this.characters = this.backend.characters;
-
-        this.backend.addCharacters({ name: 'Romeo' });
-
-        this.characters.push({ name: 'Liz' });
 
         this.backend.getCharacter(1)
             .then((data) => {
             console.log(data)
             })
 
-            this.backend.getPlanets(1)
+            this.backend.getPlanet(1)
             .then((data) => {
             console.log(data)
             })
-
-            // this.backend.getNbaGames()
-            // .then((data) => {
-            //   console.log(data)
-            // })
-
-
     }
-
 }

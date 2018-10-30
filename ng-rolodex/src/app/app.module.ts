@@ -1,30 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 /* Modules */
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, appRoutes } from './app-routing.module';
+
 /* Components */
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
+
 /* Pages */
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ViewAllContactsComponent } from './pages/viewallcontacts/viewallcontacts.component';
 import { MyProfileComponent } from './pages/myprofile/myprofile.component';
 import { CreateContactComponent } from './pages/createcontact/createcontact.component';
-import { UserComponent } from './pages/user/user.component';
-import { SignInComponent } from './pages/user/sign-in/sign-in.component';
-import { SignUpComponent } from './pages/user/sign-up/sign-up.component';
-import { SharedComponent } from './pages/user/shared/shared.component';
-import { AuthComponent } from './pages/auth/auth.component';
-
 
 /* Services */
 import { BackendService } from './services/backend.service';
 import { SessionService } from './services/session.service';
-import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -35,12 +31,7 @@ import { AuthService } from './services/auth.service';
     LoginComponent,
     ViewAllContactsComponent,
     MyProfileComponent,
-    CreateContactComponent,
-    UserComponent,
-    SignInComponent,
-    SignUpComponent,
-    SharedComponent,
-    AuthComponent
+    CreateContactComponent
   ],
   imports: [
     BrowserModule,
@@ -51,8 +42,7 @@ import { AuthService } from './services/auth.service';
   ],
   providers: [
     BackendService,
-    SessionService,
-    AuthService
+    SessionService
   ],
   bootstrap: [AppComponent]
 })
