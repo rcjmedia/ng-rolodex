@@ -24,7 +24,7 @@ module.exports = {
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'react_kanban',
+      database: 'ng_rolodex',
       user:     'development',
       password: 'development'
     },
@@ -40,7 +40,7 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'react_kanban',
+      database: 'ng_rolodex',
       user:     'development',
       password: 'development'
     },
