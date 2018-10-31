@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.EXPRESS_CONTAINER_PORT || 9090;
 const bp = require('body-parser');
-const session = require('express-session');
+// const session = require('express-session');
 // const RedisStore = require('connect-redis')(session);
 
 const UserModel = require('./knex/models/users.js');
@@ -22,12 +22,12 @@ app.use(bp.urlencoded({ extended: true }));
 
 /* GET methods */
 
-app.get('/', (req,res)=> {
-  res.send('Hello World!');
-})
+// app.get('/', (req,res)=> {
+//   res.send('Hello World!');
+// })
 
 app.get('/accounts', (req, res) => {
-  console.log("Server Accounts Is Working!")
+  console.log("Server Accounts Model Is Working!")
   AccountModel
     .fetchAll({withRelated: ["user_info_id", "levels_info_id", "contacts_info_id"]})
     .then(items => {
@@ -41,6 +41,7 @@ app.get('/accounts', (req, res) => {
 })
 
 app.get('/levels', (req,res)=> {
+    console.log("Server Levels Model Is Working!")
     LevelModel
     .fetchAll()
     .then(items => {
@@ -53,7 +54,7 @@ app.get('/levels', (req,res)=> {
 })
   
 app.get('/contacts', (req, res) => {
-  
+  console.log("Server Contacts Model Is Working!")
   ContactModel
     .fetchAll()
     .then(items => {
@@ -67,7 +68,7 @@ app.get('/contacts', (req, res) => {
 })
 
 app.get('/usernames', (req, res) => {
-
+  console.log("Server Users Model Is Working!")
    UserModel
     .fetchAll()
     .then(items => {
