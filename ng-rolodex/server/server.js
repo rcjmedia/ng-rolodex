@@ -6,6 +6,7 @@ const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 
 const UserModel = require('./knex/models/users.js');
+const LevelModel = require('./knex/models/levels.js');
 const ContactModel = require('./knex/models/contacts.js');
 const AccountModel = require('./knex/models/accounts.js');
 
@@ -32,6 +33,18 @@ app.get('/accounts', (req,res)=> {
     })
 })
 
+app.get('/levels', (req,res)=> {
+    LevelModel
+      .fetchAll()
+      .then(items => {
+        res.json(items.serialize());
+      })
+      .catch(err => {
+        console.log(err, "ERR");
+        res.json("ERROR");
+      })
+  })
+  
 app.get('/contacts', (req, res) => {
 
   ContactModel
