@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AppRoutingModule, appRoutes } from './app-routing.module';
 
 /* Components */
@@ -38,6 +39,7 @@ import { SessionService } from './services/session.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

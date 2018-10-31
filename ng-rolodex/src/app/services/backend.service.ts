@@ -6,34 +6,38 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BackendService {
 
-  baseUrl: string = 'https://swapi.co/api/';
+  baseUrl: string = 'http://localhost:9090/routes/';
 
-  planets: any[] = [];
-  characters: any[] = [];
-  
-  constructor(private http: HttpClient) {
+  accounts: any[] = [];
+  contacts: any[] = [];
+  usernames: any[] = [];
 
-  }
+  constructor(private http: HttpClient) { }
 
-  getCharacter(id: number) {
-    const url = this.baseUrl + 'people/' + id;
+  getAccounts() {
+    const url = this.baseUrl + 'accounts/';
     return this.http.get(url).toPromise();
   }
 
-  getPlanet(id: number) {
-    const url = this.baseUrl + 'planets/' + id;
+  getContacts() {
+    const url = this.baseUrl + 'contacts/';
     return this.http.get(url).toPromise();
   }
 
-  addCharacters(character) {
-    console.log('character', character)
-    this.characters.push(character);
+  getUsernames() {
+    const url = this.baseUrl + 'usernames/';
+    return this.http.get(url).toPromise();
   }
 
-  addPlanets(planet) {
-    console.log('planet', planet)
-    this.planets.push(planet);
-  }
+  // addCharacters(character) {
+  //   console.log('character', character)
+  //   this.characters.push(character);
+  // }
+
+  // addPlanets(planet) {
+  //   console.log('planet', planet)
+  //   this.planets.push(planet);
+  // }
 
   register(data) {
     return Promise.resolve({});

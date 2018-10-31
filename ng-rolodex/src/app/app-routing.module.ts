@@ -9,7 +9,7 @@ import { CreateContactComponent } from './pages/createcontact/createcontact.comp
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'viewallcontacts', component: ViewAllContactsComponent },
+  { path: 'contacts', component: ViewAllContactsComponent },
   { path: 'myprofile', component: MyProfileComponent },
   { path: 'createcontact', component: CreateContactComponent },
   { path : '', redirectTo:'/login', pathMatch : 'full'},

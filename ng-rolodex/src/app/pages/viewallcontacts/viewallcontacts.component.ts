@@ -9,8 +9,7 @@ import { BackendService } from '../../services/backend.service';
 
 export class ViewAllContactsComponent implements OnInit {
 
-  planet: string = 'PLANETS';
-  people: string = 'PEOPLE';
+  contact: string = 'Contacts';
   title: string = 'title: single line output';
   subtitle: string;
   data: {
@@ -35,9 +34,9 @@ export class ViewAllContactsComponent implements OnInit {
     class: 'test',
   }
 
-  planets: any[];
-
-  characters: any[]
+  accounts: any[];
+  contacts: any[];
+  usernames: any[];
 
   constructor(private backend: BackendService) {
     const subtitle: string = 'subtitle: in constructor this.subtitle = subtitle to outside subtitle';
@@ -47,40 +46,31 @@ export class ViewAllContactsComponent implements OnInit {
    }
 
   ngOnInit() {     
-    this.characters = this.backend.characters;
-    /*  */
-    // this.backend.addCharacters({ 
-    //   name: '', 
-    //   height: , 
-    //   mass: , 
-    //   hair_color: '', 
-    //   eye_color: '', 
-    //   species: '', 
-    //   character: '',
-    //   homeworld: ''
-    // });
-
-    this.planets = this.backend.planets;
-    // this.backend.addPlanets({ 
-    //   name: '', 
-    //   terrain: '', 
-    //   population: '', 
-    //   url: ''
-    // });
+    this.accounts = this.backend.accounts;
+    this.contacts = this.backend.contacts;
+    this.usernames = this.backend.usernames;
     
-    for(let i=1; i<10; i++){
-      this.backend.getCharacter(i)
+    for(let i=0; i<2; i++){
+      this.backend.getAccounts()
       .then((data) => {
         console.log(data);
-        this.characters.push(data)
+        this.accounts.push(data)
       });
     }
 
-    for(let j=1; j<10; j++){
-      this.backend.getPlanet(j)
+    for(let j=0; j<2; j++){
+      this.backend.getUsernames()
       .then((data) => {
         console.log(data);
-        this.planets.push(data)
+        this.usernames.push(data)
+      });
+    }
+
+    for(let k=0; k<2; k++){
+      this.backend.getContacts()
+      .then((data) => {
+        console.log(data);
+        this.contacts.push(data)
       });
     }
   } // ngOnInit

@@ -84,16 +84,16 @@ title: string = "Create New Contact";
     }    
 
     ngOnInit() {
-        this.characters = this.backend.characters;
+        // this.characters = this.backend.characters;
 
-        this.backend.getCharacter(1)
-            .then((data) => {
-            console.log(data)
-            })
+        // this.backend.getCharacter(1)
+        //     .then((data) => {
+        //     console.log(data)
+        //     })
 
-            this.backend.getPlanet(1)
-            .then((data) => {
-            console.log(data)
-            })
+        //     this.backend.getPlanet(1)
+        //     .then((data) => {
+        //     console.log(data)
+        //     })
     }
 }
