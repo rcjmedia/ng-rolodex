@@ -14,10 +14,10 @@ module.exports = {
       password: process.env.POSTGRES_PASSWORD
     },
     migrations: {
-      directory: __dirname + '/db/migrations'
+      directory: __dirname + '/knex/db/migrations'
     },
     seeds: {
-      directory: __dirname + '/db/seeds'
+      directory: __dirname + '/knex/db/seeds'
     }
   },
 
