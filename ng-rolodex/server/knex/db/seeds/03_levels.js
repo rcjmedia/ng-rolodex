@@ -12,7 +12,6 @@ exports.seed = function (knex, Promise) {
           name: "subscriber", 
           rank: "2"
         }
-        
       ]);
     });
 };

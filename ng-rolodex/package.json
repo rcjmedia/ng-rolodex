@@ -9,6 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "main": "./server/server.js",
+  "proxy": "http://localhost:9090",
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.0.0",
@@ -27,9 +29,11 @@
     "express": "^4.16.4",
     "knex": "^0.15.2",
     "ngx-toastr": "^9.1.1",
+    "nodemon": "^1.18.5",
     "pg": "^7.5.0",
     "pg-hstore": "^2.3.2",
     "rxjs": "^6.3.3",
+    "sqlite": "^3.0.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

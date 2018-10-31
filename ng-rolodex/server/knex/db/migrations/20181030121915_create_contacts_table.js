@@ -3,7 +3,6 @@ exports.up = function(knex, Promise) {
       table.increments('contact_id').unique().notNullable();
       table.string('first_name').notNullable();
       table.string('last_name').notNullable();
-      table.string('email').notNullable();
       table.string('address').notNullable();
       table.string('city').notNullable();
       table.string('state').notNullable();

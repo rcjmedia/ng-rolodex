@@ -25,8 +25,8 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'ng_rolodex',
-      user:     'development',
-      password: 'development'
+      user:     'username',
+      password: 'password'
     },
     pool: {
       min: 2,
@@ -41,8 +41,8 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'ng_rolodex',
-      user:     'development',
-      password: 'development'
+      user:     'username',
+      password: 'password'
     },
     pool: {
       min: 2,
