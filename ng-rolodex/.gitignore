@@ -26,11 +26,11 @@
 
 # misc
 .env
-*/server/node_modules
+server/node_modules
 .env.prod
 .env.example
-*/server/knex/db/seeds/users.js
-*/server/knex/db/seeds/contacts.js
+server/knex/db/seeds/01_users.js
+server/knex/db/seeds/02_contacts.js
 /.sass-cache
 /connect.lock
 /coverage
