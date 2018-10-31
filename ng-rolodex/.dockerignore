@@ -1,8 +1,8 @@
 # Node files
-node_modules/
+node_modules
 
 # Hidden files
-.env*
+dist
 
 # Docker files
 [Dd]ocker* 
