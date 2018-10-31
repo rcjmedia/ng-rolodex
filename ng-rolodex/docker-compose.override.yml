@@ -1,9 +1,9 @@
 version: '3'
 services:
   ng-rolodex:
-    image: rcjmedia/ng-rolodex:${IMAGE_VERSION}-local
+    image: rcjmedia/ng-rolodex
     depends_on:
-      - postgres-db
+      - db
       - redis-session-store
     command: ["npm", "run", "start"]
     container_name: ng-rolodex
@@ -18,7 +18,7 @@ services:
     networks:
       - my-app-network
     
-  postgres-primary-db:
+  db:
     image: postgres:10.0-alpine
     env_file: .env
     volumes: 

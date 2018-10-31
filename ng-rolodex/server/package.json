@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "nodemond server.js",
     "migrate": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex migrate:latest",
     "seed": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex seed:run",
     "flushdb": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex migrate:rollback ; POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex migrate:latest ; POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex seed:run"
@@ -24,6 +24,7 @@
     "express-session": "^1.15.6",
     "knex": "^0.15.2",
     "morgan": "^1.9.1",
+    "node-sass": "^4.9.4",
     "nodemon": "^1.18.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",

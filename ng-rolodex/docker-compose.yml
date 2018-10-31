@@ -1,5 +1,5 @@
 version: '3'
 services:
-  this-app:
+  ng-rolodex:
     build: .
     image: rcjmedia/ng-rolodex:local

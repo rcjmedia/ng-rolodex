@@ -31,6 +31,8 @@ server/node_modules
 .env.example
 server/knex/db/seeds/01_users.js
 server/knex/db/seeds/02_contacts.js
+server/knex/db/seeds/03_levels.js
+server/knex/db/seeds/04_accounts.js
 /.sass-cache
 /connect.lock
 /coverage
