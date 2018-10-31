@@ -10,6 +10,11 @@ exports.up = function(knex, Promise) {
         .inTable('users_table');
 
         table
+        .integer('levels_info_id').notNullable()
+        .references('level_id')
+        .inTable('levels_table');
+
+        table
         .integer('contacts_info_id').notNullable()
         .references('contact_id')
         .inTable('contacts_table');
