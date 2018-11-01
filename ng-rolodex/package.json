@@ -4,7 +4,7 @@
   "main": "./server/server.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve & nodemon ./server/server.js",
+    "start": "ng serve --host 0.0.0.0 & nodemon ./server/server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

@@ -5,6 +5,7 @@ const bp = require('body-parser');
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 const routes = require('./api/index');
+const cors = require('cors');
 
 app.use(session({
   store: new RedisStore({url: 'redis://redis-session-store:6379', logErrors: true}),
@@ -13,6 +14,7 @@ app.use(session({
   saveUninitialized: true // 
 }));
 
+app.use(cors()); // Use this after the variable declaration
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 

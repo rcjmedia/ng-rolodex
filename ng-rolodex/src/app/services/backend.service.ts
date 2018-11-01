@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BackendService {
 
-  baseUrl: string = 'http://localhost:9090/routes/';
+  baseUrl: string = 'http://localhost:9090/api/';
 
   accounts: any[] = [];
   contacts: any[] = [];
