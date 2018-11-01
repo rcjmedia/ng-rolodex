@@ -4,7 +4,7 @@ const PORT = process.env.EXPRESS_CONTAINER_PORT || 9090;
 const bp = require('body-parser');
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
-const routes = require('./routes/index');
+const routes = require('./api/index');
 
 app.use(session({
   store: new RedisStore({url: 'redis://redis-session-store:6379', logErrors: true}),
@@ -16,7 +16,7 @@ app.use(session({
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
-app.use('/routes', routes);
+app.use('/api', routes);
 
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}...`)
