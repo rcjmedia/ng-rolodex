@@ -1,4 +1,52 @@
 <section id="home" class="content">
-  <h2>Home</h2>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+  <!-- <div>
+  <p>{{message}}</p>
+
+  <form action="">
+    <input type="text" name="searchInput" (keyup)="onKey()" autofocus [(ngModel)]="formData.searchInput">
+  </form>
+
+  {{formData.searchInput}}
+
+  <br>
+  <button (click)="search()">Search</button>
+</div>
+
+<div class="contactsList">
+  <div class="contactCard" *ngFor="let contact of contacts">
+    <p class="contactName">{{contact.name}}</p>
+    address: {{contact.address}}<br>
+    mobile: {{contact.mobile}}<br>
+    work: {{contact.work}}<br>
+    home: {{contact.home}}<br>
+    email: {{contact.email}}<br>
+    twitter: {{contact.twitter}}<br>
+    instagram: {{contact.instagram}}<br>
+    github: {{contact.github}}<br>
+  </div>
+
+</div> -->
+
+
+<div class='header'>
+  <h1> Begin Your Search</h1>
+</div>
+
+<div class='homepage-container'>
+  <form>
+    <input type='text' name='term' placeholder='Type in something to search' [(ngModel)]='term'>
+    <button class='btn' (click)='search()'> Search</button>
+  </form>
+  <br/>
+  <div class='contacts-container' *ngFor="let contact of contactsMatch">
+      <h3>{{ contact.name }}</h3>
+      <ul>
+        <li>{{ contact.address }}</li>
+        <li>{{ contact.mobile }}</li>
+        <li>{{ contact.email }}</li>
+      </ul>
+    </div>
+</div>
 </section>
+

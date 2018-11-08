@@ -1,23 +1,54 @@
 <section id="viewallcontacts" class="content">
     <div class="form-horizontal">
         <div class="form-heading">
-            <h2>View All Contacts</h2>
+            <h2>{{ contact }}</h2>
         </div>
-        <h2 style="text-align: center">{{ contact }}</h2>  
-        <div *ngFor='let contacts of contacts' class='people-wrapper'>
-            <div class="char-name">{{ contacts.first_name }} {{ contacts.last_name }}</div>
-            <p style="text-align: left">
-                Address: {{ contacts.address }}   
-            </p>
-            <p style="text-align: right; margin-top: -22px">
-                City: {{ contacts.city }}
-            </p>
-            <p style="text-align: left">
-                State: {{ contacts.state }}
-            </p>
-            <p style="text-align: right; margin-top: -22px">
-                Zip Code: {{ contacts.zipcode }}
-            </p>
+        <!-- <h2 style="text-align: center">{{ contact }}</h2>   -->
+        <div *ngFor='let contact of contacts' class='name-wrapper'>
+        <div class="name">
+            <a href="api/contacts/{{ contact.id }}">
+                {{ contact.name }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✎
+            </a>
+        </div>
+
+        <!-- <img *ngIf="contact.photo" src="{{contact.photo}}" alt="Photo"> -->
+        <!-- <p id="created_at">Created At: {{contact.created_at}}</p>
+        <p id="updated_at">Updated At: {{contact.updated_at}}</p> -->
+        <p id="address">Address: {{contact.address}}</p>
+        <p id="mobile">Mobile: {{contact.mobile}}</p>
+        <p id="work">Work Phone: {{contact.work}}</p>
+        <p id="home">Home Phone: {{contact.home}}</p>
+        <p id="email">
+            Email: 
+            <a href="mailto:{{contact.email}}">
+                {{contact.email}}
+            </a>
+        </p>
+        <p id="twitter">
+            Twitter: 
+            <a href="{{contact.twitter}}" target="_blank">
+                {{contact.twitter}}
+            </a>
+        </p>
+        <p id="instagram">
+            Instagram: 
+            <a href="{{contact.instagram}}" target="_blank">
+                {{contact.instagram}}
+            </a>
+        </p>
+        <p id="github">
+            Github: 
+            <a href="{{contact.github}}" target="_blank">
+                {{contact.github}}
+            </a>
+        </p>
+        <p id="created_by">
+            Created By: 
+            <a href="api/contacts/{{ contact.created.id }}">
+                {{contact.created.name}}
+            </a>
+        </p>
+
         </div><br /><br />
     </div> <!-- form-horizontal -->
 </section>

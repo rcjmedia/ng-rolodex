@@ -1,57 +1,85 @@
-*{
-    text-decoration:none; 
-    list-style:none; 
-    margin:0px; 
-    padding:0px; 
-    outline:none;
+body {
+  margin: 40px 0;
+}
+.form-horizontal {
+      max-width: 600px;
+      margin: auto;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      box-shadow: 1px 1px 5px 5px gray;
+  &:after {
+      content: "";
+      display: table;
+      clear: both;
   }
-  
-  body {
-    margin:0px; 
-    padding:0px; 
-    font-family: 'Open Sans', sans-serif;
-  }
-  
-  section {
-    width:100%; 
-    max-width:1200px; 
-    margin:0px auto; 
-    display:table; 
-    position:relative;
-  }
-  
-  .content {
-    display:table; 
-    margin-bottom:60px; 
-    width:900px;
-  }
-  
-  .content h2 {
-    font-size:18px; 
-    font-weight:500; 
-    color:#002e5b; 
-    border-bottom:1px solid #fde428; 
-    display:table; 
-    padding-bottom:10px; 
-    margin-bottom:10px;
-  }
-  
-  .content p {
-    font-size:14px; 
-    line-height:22px; 
-    color:#7c7c7c; 
-    text-align:justify;
-  }
-  
-  @media only screen and (max-width: 1440px) {
-    section {
-        max-width:95%;
+  .form-heading {
+      background: #fde428;
+      border-radius: 10px;
+      padding: 10px 15px;
+      h2 {
+      text-align: center;
+      color: #002e5b;
+      margin: 0;
       }
   }
-  
-  @media only screen and (max-width: 980px) {
-  .content {
-      width:90%;
-      }
+  .form-group {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      max-width: 100%;
+      margin: auto;
+      margin: 15px;
   }
-    
+  .left {
+      display: grid;
+  }
+  .right {
+      display: grid;
+      justify-content: center;
+      padding: 2px;
+      padding-top: -5px;
+      padding-left: 15px;
+      margin-left: 15px;
+      border: 2px solid #002e5b;
+      border-radius: 10px;
+  }
+}
+
+.newcontactdetails {
+  // padding-left: 5px;
+  margin-bottom: -30px;
+}
+
+p {
+  font-size:18px; 
+  font-weight: bold;
+  color:#002e5b; 
+  border-bottom:1px solid #fde428; 
+  display:table;
+  margin-top: -2px;
+  // padding-bottom:10px; 
+  // margin-bottom:10px;
+}
+
+input[type=text] {
+  // border-bottom: 1px dashed #002e5b;
+  margin-bottom: 1px;
+}
+
+#btn {
+  margin: 15px 0;
+  padding: 15px;
+  border: 0px;
+  background: #1e5799;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+
+  &:disabled {
+    background-color: #ccc;
+  }
+  &:hover {
+    background-color: #fde428;
+  }
+}

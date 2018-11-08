@@ -15,6 +15,10 @@ import { HeaderComponent } from './shared/header/header.component';
 /* Pages */
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LogoutComponent } from './pages/logout/logout.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { EditcontactComponent } from './pages/editcontact/editcontact.component';
+
 import { ViewAllContactsComponent } from './pages/viewallcontacts/viewallcontacts.component';
 import { MyProfileComponent } from './pages/myprofile/myprofile.component';
 import { CreateContactComponent } from './pages/createcontact/createcontact.component';
@@ -22,7 +26,7 @@ import { CreateContactComponent } from './pages/createcontact/createcontact.comp
 /* Services */
 import { BackendService } from './services/backend.service';
 import { SessionService } from './services/session.service';
-
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -30,9 +34,12 @@ import { SessionService } from './services/session.service';
     HeaderComponent,
     HomeComponent,
     LoginComponent,
+    RegisterComponent,
+    LogoutComponent,
     ViewAllContactsComponent,
     MyProfileComponent,
-    CreateContactComponent
+    CreateContactComponent,
+    EditcontactComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,8 @@ import { SessionService } from './services/session.service';
   ],
   providers: [
     BackendService,
-    SessionService
+    SessionService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

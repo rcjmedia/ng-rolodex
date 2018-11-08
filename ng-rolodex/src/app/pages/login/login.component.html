@@ -1,7 +1,7 @@
 <div class="login-container">
     <form class="form-horizontal">
         <div class="form-heading">
-            <h2>Sign In</h2>
+            <h2>{{loginTitle}}</h2>
         </div>
         <div class="form-group">
             <input type="text" name="username" placeholder="username" [(ngModel)]="loginFormData.username">
@@ -9,7 +9,7 @@
         <div class="form-group">
             <input type="text" name="password" placeholder="password" [(ngModel)]="loginFormData.password">
         </div>  
-        <button class="btn" (click)="login()">Sign In</button>
-        <!-- {{ loginFormData | json}} -->
+        <button class="btn" (click)="login()">Log In</button>
+        {{ loginFormData | json}}
     </form>
 </div>

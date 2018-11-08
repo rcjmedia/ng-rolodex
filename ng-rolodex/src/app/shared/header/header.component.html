@@ -1,6 +1,6 @@
 <div class="main-header">
     <div>
-        <a href="http://localhost:4200" id="logo" target="_blank">ROLODEX</a>
+        <a href="/" id="logo" target="_blank">ROLODEX</a>
 
         <label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
         <input type="checkbox" id="toggle-1">
@@ -8,9 +8,9 @@
         <nav>
             <ul>
                 <li><a routerLink="/"><i class="routes"></i>Home</a></li>
-                <li><a routerLink="/contacts"><i class="routes-"></i>View All Contacts</a></li>
-                <li><a routerLink="/createcontact"><i class="routes"></i>Create Contact</a></li>
-                <li><a routerLink="/myprofile"><i class="routes"></i>My Profile</a></li>
+                <li><a routerLink="/api/contacts"><i class="routes-"></i>View All Contacts</a></li>
+                <li><a routerLink="/api/createcontact"><i class="routes"></i>Create Contact</a></li>
+                <li><a routerLink="/api/profile"><i class="routes"></i>My Profile</a></li>
                 <li class="routes" *ngIf="isLoggedIn()">
                         <a (click)="logout()" class="routes">Log Out</a>
                         Welcome, {{user.username}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

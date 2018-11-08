@@ -1,32 +1,37 @@
 <section id="createcontact" class="content">
 <form class="form-horizontal">
     <div class="form-heading">
-        <h2>Create New Contact</h2>
+        <h2>{{addContactTitle}}</h2>
     </div>
     <div class="form-group">
         <div class="left">
-            <input type="text" class="form-control" placeholder="Enter Firstname" name="firstname" [(ngModel)]="formData.firstname" (keyup)="validateName()"/>
-            <input type="text" class="form-control" placeholder="Enter Lastname" name="lastname" [(ngModel)]="formData.lastname" (keyup)="validateName()"/>
+            <input type="text" class="form-control" placeholder="Enter Name" name="name" [(ngModel)]="formData.name" (keyup)="validateName()"/>
             <input type="text" class="form-control" placeholder="Enter Address" name="address" [(ngModel)]="formData.address"/>
-            <input type="text" class="form-control" placeholder="Enter City" name="city" [(ngModel)]="formData.city"/>
-            <input type="text" class="form-control" placeholder="Enter State" name="state" [(ngModel)]="formData.state"/>
-            <input type="text" class="form-control" placeholder="Enter Zipcode" name="zipcode" [(ngModel)]="formData.zipcode"/>
+            <input type="text" class="form-control" placeholder="Enter Mobile" name="mobile" [(ngModel)]="formData.mobile"/>
+            <input type="text" class="form-control" placeholder="Enter Work" name="work" [(ngModel)]="formData.work"/>
+            <input type="text" class="form-control" placeholder="Enter Home" name="home" [(ngModel)]="formData.home"/>
             <input type="text" class="form-control" placeholder="Enter Email" name="email" [(ngModel)]="formData.email" (keyup)="validateEmail()"/>
-            <input type="text" class="form-control" placeholder="Enter phone" name="phone" [(ngModel)]="formData.phone"/>
+            <input type="text" class="form-control" placeholder="Enter Twitter" name="twitter" [(ngModel)]="formData.twitter"/>
+            <input type="text" class="form-control" placeholder="Enter Instagram" name="instagram" [(ngModel)]="formData.instagram"/>
+            <input type="text" class="form-control" placeholder="Enter Github" name="twitter" [(ngModel)]="formData.github"/>
+            <input type="text" class="form-control" placeholder="Created By (must enter 1, 2 or 3 for now)" name="created_by" [(ngModel)]="formData.created_by"/>
         </div>
         <div class="right">
                 <div class="newcontactdetails"><p>New Contact Details:</p></div><br />
-                {{ formData.firstname }} {{ formData.lastname }}<br />
+                {{ formData.name }}<br />
                 {{ formData.address }}<br />
-                {{ formData.city }}<br />
-                {{ formData.state }}<br />
-                {{ formData.zipcode }}<br />
+                {{ formData.mobile }}<br />
+                {{ formData.work }}<br />
+                {{ formData.home }}<br />
                 {{ formData.email }}<br />
-                {{ formData.phone }}<br />
+                {{ formData.twitter }}<br />
+                {{ formData.instagram }}<br />
+                {{ formData.github }}<br />
+                {{ formData.created_by }}<br />
         </div>
     </div>
-    <button (click)="submit()" class="btn-submit" [disabled]="isDisabled()">Submit</button>
-    <!-- <button (click)="submit()" [class]="formData.class">Submit To Console Log Button CSS Classname</button> -->
+    <!-- <button (click)="submit()" class="btn-submit" [disabled]="isDisabled()">Submit</button> -->
+    <button id="btn" (click)="submit()" [class]="formData.submitButton">Submit</button>
 </form>
 
 </section>

@@ -1,0 +1,60 @@
+<section id="editcontacts" class="content">
+<div class="form-horizontal">
+  <div class="form-heading">
+    <h2>{{ contact.name }}</h2>
+  </div>
+  <div class="contact-detail" *ngIf="!this.editing" [(ngModel)]="contact">
+    Name:
+    <p>{{ contact.name }}</p>
+    Address:
+    <p>{{contact.address}}</p>
+    Mobile:
+    <p>{{contact.mobile}}</p>
+    Work:
+    <p>{{contact.work}}</p>
+    Home:
+    <p>{{contact.home}}</p>
+    Email:
+    <p>{{contact.email}}</p>
+    Twitter:
+    <p>{{contact.twitter}}</p>
+    Instagram:
+    <p>{{contact.instagram}}</p>
+    Github:
+    <p>{{contact.github}}</p>
+    <div class="btn">
+      <button (click)="toggleEdit()">Edit</button>
+      <a routerLink="/contacts">Back</a>
+    </div>
+  </div>
+
+<!-- Editing body -->
+<div class="edit-wrapper" *ngIf="this.editing">
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" name="name" [(ngModel)]="editFormData.name"><br />
+    <label for="address">Address:</label>
+    <input type="text" name="address" [(ngModel)]="editFormData.address"><br />
+    <label for="mobile">Mobile;</label>
+    <input type="text" name="mobile" [(ngModel)]="editFormData.mobile"><br />
+    <label for="work">Work:</label>
+    <input type="text" name="work" [(ngModel)]="editFormData.work"><br />
+    <label for="home">Home:</label>
+    <input type="text" name="home" [(ngModel)]="editFormData.home"><br />
+    <label for="email">Email:</label>
+    <input type="text" name="email" [(ngModel)]="editFormData.email"><br />
+    <label for="twitter">Twitter:</label>
+    <input type="text" name="twitter" [(ngModel)]="editFormData.twitter"><br />
+    <label for="instagram">Instagram:</label>
+    <input type="text" name="instagram" [(ngModel)]="editFormData.instagram"><br />
+    <label for="github">Github:</label>
+    <input type="text" name="github" [(ngModel)]="editFormData.github"><br />
+    <div class="buttons">
+      <button (click)="submitContactEdit()">Submit</button>
+      <button (click)="toggleEdit()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+</div>
+</section>

@@ -1,9 +1,20 @@
+// Source: https://github.com/bookshelf/bookshelf/wiki/Plugin:-Model-Registry
+
 const bookshelf = require('./bookshelf');
+require('./contacts');
 
-const UserModel = bookshelf.Model.extend({
-    tableName: 'users_table',
-    idAttribute: 'user_id',
-    hasTimestamps: true    
-});
+class Users extends bookshelf.Model{
+  get tableName(){
+    return 'users'
+  }
 
-module.exports = UserModel;
+  get hasTimestamps(){
+    return true;
+  }
+
+  created(){
+    return this.hasMany('Contacts', 'created_by')
+  }
+}
+
+module.exports = bookshelf.model('Users', Users)

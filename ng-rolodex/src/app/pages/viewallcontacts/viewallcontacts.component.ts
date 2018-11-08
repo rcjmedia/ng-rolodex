@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { BackendService } from '../../services/backend.service';
 
 @Component({
@@ -10,69 +11,42 @@ import { BackendService } from '../../services/backend.service';
 export class ViewAllContactsComponent implements OnInit {
 
   contact: string = 'Contacts';
-  title: string = 'title: single line output';
-  subtitle: string;
-  data: {
-    search: string,
-    header: string,
-    content: string,
-    class: string,
-  } = {
-    search: 'Search for a contact...',
-    header: 'data.header info',
-    content: 'data.content info',
-    class: 'search',
-  };
+  contacts: any[];
   
-  formData: {
-    name: string,
-    email: string,
-    class: string,
-  } = {
-    name: '',
-    email: '',
-    class: 'test',
+  constructor(private backend: BackendService, private http: HttpClient) { 
+    this.contacts = [] 
   }
 
-  accounts: any[];
-  contacts: any[];
-  usernames: any[];
-
-  constructor(private backend: BackendService) {
-    const subtitle: string = 'subtitle: in constructor this.subtitle = subtitle to outside subtitle';
-
-    this.data.content = 'this.data.content in constructor'
-    this .subtitle = subtitle;
-   }
+  // Notes for creating sorting function:
+  // Per project requirement, There should be a list of contacts in alphabetical order -
+  // Jason Sewell
+  // Jason Statham
+  // Jason Voorhees
+  // Since we have an array of contacts, create a function name 
+  // "alphaSort" then give it an argument "result" then use it as result.sort
+  // then pass an ES6 style function that takes arguments a and b and compare them
+  // It should return something negative if first argument is less 
+  // than second (should be placed before the second in resulting array)
+  // something positive if first argument is greater (should be placed after second one)
+  // then return 0 if those two elements are equal.
+  // In our case if two elements are a and b we want to compare a.first_name and b.first_name
+   alphaSort(result) {
+    this.contacts = result.sort((a, b) => {
+      if(a.name < b.name) { 
+        return -1; 
+      }
+      if(a.name > b.name) { 
+        return 1; 
+      }
+      return 0;
+    });
+  }
 
   ngOnInit() {     
-    this.accounts = this.backend.accounts;
-    this.contacts = this.backend.contacts;
-    this.usernames = this.backend.usernames;
-    
-    for(let i=0; i<2; i++){
-      this.backend.getAccounts()
-      .then((data) => {
-        console.log(data);
-        this.accounts.push(data)
-      });
-    }
-
-    for(let j=0; j<2; j++){
-      this.backend.getUsernames()
-      .then((data) => {
-        console.log(data);
-        this.usernames.push(data)
-      });
-    }
-
-    for(let k=0; k<2; k++){
-      this.backend.getContacts()
-      .then((data) => {
-        console.log(data);
-        this.contacts.push(data)
-      });
-    }
+    this.backend.getContacts()
+      .then(result => {
+        this.alphaSort(result)
+      })
+      
   } // ngOnInit
 } // export class
-

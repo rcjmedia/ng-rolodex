@@ -32,4 +32,16 @@ export class HeaderComponent {
     logout() {
         return this.auth.logout();
     }
+
+//   logout() {
+//     return this.auth
+//       .logout(this.user)
+//       .then(() => {
+//         this.router.navigate(['/']);
+//       })
+//       .catch(err => {
+//         console.log('error', err);
+//       });
+//   }
+
 }
