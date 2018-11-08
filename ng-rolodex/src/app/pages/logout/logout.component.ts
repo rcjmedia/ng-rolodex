@@ -13,7 +13,7 @@ export class LogoutComponent {
 
   logout() {
     console.log('logoutbutton pressed')
-    return this.auth.logout(1)
+    return this.auth.logout()
       .then(() => {
         console.log('user logged out')
       })
